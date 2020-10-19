@@ -1,0 +1,46 @@
+{
+    "model": "ncf",
+    "config_id": "default",
+    "root_dir": "../",
+    "dataset": "dunnhumby",
+    "data_split":"temporal",
+    "test_rate":0.2,
+    "n_test":1,
+    "percent": 1,
+    "emb_dim": 32,
+    "num_negative": 4,
+    "batch_size": 256,
+    "dropout": 0.0,
+    "metrics": ["ndcg_at_k", "precision_at_k", "recall_at_k", "map_at_k"],
+    "validate_metric": "ndcg_at_k@10",
+    "device_str": "gpu",
+    "optimizer": "rmsprop",
+    "lr": 1e-3,
+    "max_epoch": 30,
+    "result_file": "result.csv",
+    "log_dir": "logs/",
+    "result_dir": "results/",
+    "checkpoint_dir": "checkpoints/",
+    "dataset_dir": "datasets/",
+    "run_dir": "runs/",
+    "gmf_config": {
+        "name": "gmf",
+        "save_name": "gmf.model"
+    },
+    "mlp_config": {
+        "name": "mlp",
+        "n_layers": 3,
+        "save_name": "mlp.model"
+    },
+    "neumf_config": {
+        "name": "ncf",
+        "save_name": "ncf.model"
+    },
+    "gcn_config": {
+        "name": "gcn",
+        "mess_dropout": [0.0, 0.0],
+        "layers": [64, 32],
+        "regs": [1e-5],
+        "save_name": "gcn.model"
+    }
+}

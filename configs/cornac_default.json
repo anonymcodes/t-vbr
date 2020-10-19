@@ -1,0 +1,19 @@
+{
+    "model": "VBCAR",
+    "config_id":"default",
+    "root_dir":"../",
+    "dataset": "instacart",
+    "dataset_comment": "options are: dunnhumby, tafeng, instacart, instacart_25, atoswl",
+    "data_split":"temporal_basket",
+    "test_rate":0.2,
+    "n_test":1,
+    "percent": 1,
+    "validate_metric": "ndcg_at_k@10",
+    "result_file": "result.csv",
+    "log_dir": "logs/",
+    "result_dir": "results/",
+    "checkpoint_dir": "checkpoints/",
+    "dataset_dir": "datasets/",
+    "process_dir": "processes/",
+    "run_dir": "runs/"
+}
