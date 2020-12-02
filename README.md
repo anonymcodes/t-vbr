@@ -1,7 +1,23 @@
 # Learning Temporal Representation for Grocery Recommendation
 
 >This is our Pytorch implementation for the paper:
->**Anonymous Author(s), Temporal Variational Bayesian Representation Learning for Grocery Recommendation, 2020**
+>**Anonymous Author(s), Learning Temporal Representation for Grocery Recommendation, 2020**
+
+### Performance comparison of T-VBR over different item features
+We have explored four different types of item features and their combinations to determine the best feature for items.
+- **Item Key (Key)**: This is randomly generated keys for items as the identical codes.
+- **One-hot (One)**: The category feature of item can be directly repesented as the one-hot encoding. The textual information of items, such as product description, can be also repesentated as the one-hot encoding based on the frequent words.
+- **Word2vec (W2C)**: We use the Google pre-trained [Word2vec model](http://code.google.com/archive/p/Word2vec/) to obtain embeddings for all the words appearing in the item descriptions. We construct the product description embedding by simply averaging the word embedding vectors along each dimension for all the words in the description.
+- **BERT**: We also use the Bidirectional Encoder Representations from Transformers (BERT), a popular pre-trained language model for encoding words and sentences into embeddings. In particular, we use DistilBert from HuggingFace, which is a smaller and faster architecture based on BERT.
+
+<a href="url"><img src="./integration_side_information.png" align="center" ></a>
+
+#### Performance comparison over different feature on Dunnhumby dataset
+<a href="url"><img src="./dunnhumby_side_compare.jpg" align="center" width="480" ></a>
+
+#### Performance comparison over different feature on Instacart dataset
+<a href="url"><img src="./instacart_side_compare.jpg" align="center" width="480" ></a>
+
 
 ## Introduction
 
