@@ -3,6 +3,8 @@
 >This is our Pytorch implementation for the paper:
 >**Anonymous Author(s), Learning Temporal Representation for Grocery Recommendation, 2020**
 
+### Response to Reviewer #1
+
 ### Performance comparison of T-VBR over different item features
 We have explored four different types of item features and their combinations to determine the best feature for items.
 - **Item Key (Key)**: This is randomly generated keys for items as the identical codes.
@@ -18,7 +20,13 @@ We have explored four different types of item features and their combinations to
 #### Performance comparison over different feature on Instacart dataset
 <a href="url"><img src="./instacart_side_compare.jpg" align="center" width="480" ></a>
 
+-----------
+### Response to Reviewer #3
 
+#### Overall performance on top-k item recommendation (k={ 5, 10 }). The red rows are the additional result of the HIRE model. The detailed implementation of the HIRE model can be found in [HIRE](./HIRE/train_HIRE.py)
+<a href="url"><img src="./hire_performance.jpg" align="center" width="880" ></a>
+
+-----------
 ## Introduction
 
 This paper focuses on the recommendation task in the grocery shopping scenario, where users purchase multiple products in sequential baskets. It is commonly acknowledged that both users' interests and products' popularities vary over time. However, few prior grocery recommendation methods account for such temporal patterns, instead, representing each user and product via a static low dimensional vector. In contrast, we propose a new model: Temporal Variational Bayesian Representation (T-VBR) for grocery recommendation, which is able to encode temporal patterns to improve effectiveness. T-VBR is designed under the temporal variational Bayesian framework, and it learns the temporal Gaussian representations for users and items by encoding information from: 1) the basket context; 2) item side information; and 3) the temporal context from past user-item interactions. T-VBR is trained using sampled triples of users with two items bought together in baskets during different time windows, via a Bayesian Skip-gram model based on a temporal variational auto-encoder. Experiments conducted on four public grocery shopping datasets show that our proposed T-VBR model can significantly outperform the existing state-of-the-art grocery recommendation methods, and can learn more expressive representations that effectively capture the temporal information.
