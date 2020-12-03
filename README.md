@@ -8,9 +8,13 @@
 
 #### Time analysis
 - **Running time over different number of sampled triples**
-<a href="url"><img src="./N_SAMPLE_time.jpg" align="center" width="480">
+
+  <a href="url"><img src="./N_SAMPLE_time.jpg" align="center" width="480">
+
+We can derive the time complexity from the Triple2vec model, which has a complexity of $O(DK|\mathcal{T}|)$ for each epoch, where $D$ is the embedding dimension of users and items, $K$ is the number of negative samples (normally set to 5, can be ignored) and $|\mathcal{T}|$ is the total number of sampled positive triples. Comparing with the Triple2vec model, the VBCAR model has two additional MLP layers for the feature encoding, therefore its time complexity is $O((D(H+F_{max})|\mathcal{T}|)$, where $H$ is the hidden layer dimension of MLP layers, $F_{max}$ is the max value of the dimensions of user and item features. For our T-VBR model, the total number of sampled triples is the same as the two previous models, it additionally contains the time embeddings and the two smoothing neural layers, which need extra time cost. We also use $H$ as the hidden layer dimension of soothing layers. Therefore, the total complexity of T-VBR is $O((D+T)(H+F_{max})|\mathcal{T}|)$. 
 
 #### Performance comparison of T-VBR over different item features
+
 We have explored four different types of item features and their combinations to determine the best feature for items.
 - **Item Key (Key)**: This is randomly generated keys for items as the identical codes.
 - **One-hot (One)**: The category feature of item can be directly repesented as the one-hot encoding. The textual information of items, such as product description, can be also repesentated as the one-hot encoding based on the frequent words.
