@@ -5,7 +5,12 @@
 
 ### Response to Reviewer #1
 
-### Performance comparison of T-VBR over different item features
+
+#### Time analysis
+- **Running time over different number of sampled triples**
+<a href="url"><img src="./N_SAMPLE_time.jpg" align="center" width="480">
+
+#### Performance comparison of T-VBR over different item features
 We have explored four different types of item features and their combinations to determine the best feature for items.
 - **Item Key (Key)**: This is randomly generated keys for items as the identical codes.
 - **One-hot (One)**: The category feature of item can be directly repesented as the one-hot encoding. The textual information of items, such as product description, can be also repesentated as the one-hot encoding based on the frequent words.
